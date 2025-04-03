@@ -11,7 +11,8 @@ pipeline{
 		stage("Setup dot net 6"){
 			steps{
 				bat '''
-				choco install dotnet-sdk -y --version=6.0.100
+				curl -l -o dotnet-sdk-6.0.136-win-x86.exe https://builds.dotnet.microsoft.com/dotnet/Sdk/6.0.136/dotnet-sdk-6.0.136-win-x86.exe
+				dotnet-sdk-6.0.136-win-x86.exe /quiet /norestart
 				'''
 			}
 		}
